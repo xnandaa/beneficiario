@@ -10,4 +10,8 @@
     <Folder Include="Repository\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\beneficiario.domain\beneficiario.domain.csproj" />
+  </ItemGroup>
+
 </Project>

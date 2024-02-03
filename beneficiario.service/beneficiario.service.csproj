@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\beneficiario.domain\beneficiario.domain.csproj" />
+    <ProjectReference Include="..\beneficiario.repository\beneficiario.repository.csproj" />
   </ItemGroup>
 
 </Project>
