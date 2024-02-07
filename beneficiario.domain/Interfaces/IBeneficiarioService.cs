@@ -11,5 +11,6 @@ namespace beneficiario.domain.Interfaces
     {
         Task<string> PostAsync(BeneficiarioCommand command);
         Task GetAsync(BeneficiarioCommand command);
+        Task<object?> PostAsync(object beneficiarioCommand, BeneficiarioCommand command);
     }
 }

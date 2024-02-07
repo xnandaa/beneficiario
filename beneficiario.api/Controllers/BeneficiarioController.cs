@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using beneficiario.domain.Commands;
+using beneficiario.domain.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace beneficiario.api.Controllers
@@ -7,8 +9,17 @@ namespace beneficiario.api.Controllers
     [ApiController]
     public class BeneficiarioController : ControllerBase
     {
-        private readonly IBene
-        
+        private readonly IBeneficiarioService _beneficiarioService;
+        public BeneficiarioController(IBeneficiarioService beneficiarioService)
+        {
+            _beneficiarioService = beneficiarioService;
+        }
 
+        [HttpPost]
+        [Route("CadastrarBeneficiario")]
+        public async Task<IActionResult> PostAsync(BeneficiarioCommand command)
+        {
+            return Ok(await _beneficiarioService.PostAsync( command));
+        }
     }
 }

@@ -246,6 +246,45 @@
             "rid": "win"
           }
         }
+      },
+      "beneficiario.domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/beneficiario.domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/beneficiario.domain.dll": {}
+        }
+      },
+      "beneficiario.repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Dapper": "2.1.28",
+          "System.Data.SqlClient": "4.8.6",
+          "beneficiario.domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/beneficiario.repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/beneficiario.repository.dll": {}
+        }
+      },
+      "beneficiario.service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "beneficiario.domain": "1.0.0",
+          "beneficiario.repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/beneficiario.service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/beneficiario.service.dll": {}
+        }
       }
     }
   },
@@ -912,13 +951,30 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "beneficiario.domain/1.0.0": {
+      "type": "project",
+      "path": "../beneficiario.domain/beneficiario.domain.csproj",
+      "msbuildProject": "../beneficiario.domain/beneficiario.domain.csproj"
+    },
+    "beneficiario.repository/1.0.0": {
+      "type": "project",
+      "path": "../beneficiario.repository/beneficiario.repository.csproj",
+      "msbuildProject": "../beneficiario.repository/beneficiario.repository.csproj"
+    },
+    "beneficiario.service/1.0.0": {
+      "type": "project",
+      "path": "../beneficiario.service/beneficiario.service.csproj",
+      "msbuildProject": "../beneficiario.service/beneficiario.service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Dapper >= 2.1.28",
       "Swashbuckle.AspNetCore >= 6.4.0",
-      "System.Data.SqlClient >= 4.8.6"
+      "System.Data.SqlClient >= 4.8.6",
+      "beneficiario.domain >= 1.0.0",
+      "beneficiario.service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -952,7 +1008,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\amanda.onunes\\source\\repos\\beneficiario.api\\beneficiario.domain\\beneficiario.domain.csproj": {
+              "projectPath": "C:\\Users\\amanda.onunes\\source\\repos\\beneficiario.api\\beneficiario.domain\\beneficiario.domain.csproj"
+            },
+            "C:\\Users\\amanda.onunes\\source\\repos\\beneficiario.api\\beneficiario.service\\beneficiario.service.csproj": {
+              "projectPath": "C:\\Users\\amanda.onunes\\source\\repos\\beneficiario.api\\beneficiario.service\\beneficiario.service.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -9,13 +9,10 @@ namespace beneficiario.domain.Entities
 {
     public class Beneficiario
     {
-        public Beneficiario()
-        {
-           
-        }
+       
 
         public int BeneficiarioId { get; set; }
-        public string BeneficiarioNome { get; set; }
+        public string Nome { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Cep { get; set; }

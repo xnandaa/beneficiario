@@ -1,11 +1,6 @@
 ﻿using beneficiario.domain.Commands;
 using beneficiario.domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static beneficiario.service.Service.BeneficiarioService;
+
 
 namespace beneficiario.service.Service
 {
@@ -32,6 +27,10 @@ namespace beneficiario.service.Service
             throw new NotImplementedException();
         }
 
+        public Task<object?> PostAsync(object beneficiarioCommand, BeneficiarioCommand command)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }     
